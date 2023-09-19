@@ -8,26 +8,30 @@ int main() {
     cin >> x;
     if (x <= -2){
         cout << "Y1 = 0" << "\n";
-    } else if (-2 < x)
+    } 
+    if (-2 < x)
     {
         if (x < -1)
         {
            cout << "Y1 = -1" << "\n";
         }
-    } else if (-1 < x)
+    } 
+    if (-1 < x)
     {
         if (x < 1)
         {
             cout << "Y1 = 1" << "\n";
         }
         
-    } else if (1 <= x)
+    } 
+    if (1 <= x)
     {
         if (x < 2)
         {
             cout << "Y1 = -1" << "\n";
         }
-    } else if (x >= 2)
+    }
+    if (x >= 2)
     {
         cout << "Y1 = 0" << "\n";
     }
