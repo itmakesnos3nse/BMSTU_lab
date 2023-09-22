@@ -19,19 +19,19 @@ int main(){
         {
             ans = 1000 * x11 + 100 * x12 + 10 * x21 + x22;
             cout << ans;
-        } else if (x21 * x22 <= x31 * x32){
+        } else if ((x21 * x22 <= x22 * x31) && (x22 * x31 <= x31 * x32)){
             ans = 1000 * x21 + 100 * x22 + 10 * x31 + x32;
             cout << ans;
-        }else if (x11 * x12 <= x31 * x32){
+        }else if ((x11 * x12 <= x12 * x31) && (x12 * x31 <= x31 * x32)){
             ans = 1000 * x11 + 100 * x12 + 10 * x31 + x32;
             cout << ans;
-        }else if (x31 * x32 <= x21 * x22){
+        }else if ((x31 * x32 <= x32 * x21) && (x32 * x21 <= x21 * x22)){
             ans = 1000 * x31 + 100 * x32 + 10 * x21 + x22;
             cout << ans;
-        }else if (x21 * x22 <= x11 * x12){
+        }else if ((x21 * x22 <= x22 * x11) && (x22 * x11 <= x11 * x12)){
             ans = 1000 * x21 + 100 * x22 + 10 * x11 + x12;
             cout << ans;
-        }else if (x31 * x32 <= x11 * x12){
+        }else if ((x31 * x32 <= x32 * x11) && (x32 * x11 <= x11 * x12)){
             ans = 1000 * x31+ 100 * x32 + 10 * x11 + x21;
             cout << ans;
         }else{
