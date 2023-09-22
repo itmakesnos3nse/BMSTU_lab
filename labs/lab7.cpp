@@ -17,12 +17,9 @@ int main() {
     {
         cout << "Y1 = 1" << "\n";
     }
-    else if (1 <= x)
+    else if (x < 2)
     {
-        if (x < 2)
-        {
-            cout << "Y1 = -1" << "\n";
-        }
+        cout << "Y1 = -1" << "\n";
     } 
     else if (x >= 2)
     {
