@@ -10,13 +10,12 @@ int main() {
     double x1, y1, x2, y2, x3, y3;
     
     cout << "Введите координаты вершин треугольника (x1, y1): " << endl;
-    cin >> x1 >> y2;
+    cin >> x1 >> y1;
     cout << "Введите координаты вершин треугольника (x2, y2): " << endl;
     cin >> x2 >> y2;
     cout << "Введите координаты вершин треугольника (x3, y3): " << endl;
     cin >> x3 >> y3;
 
-    
     if (x1 == x2 && y1 == y2 && x2 == x3 && y2 == y3) {
         cout << "Некорректные данные (введена одна точка)" << endl;
     } else if ((x1 == x2 && y1 == y2)|| (x2 == x3 && y2 == y3) || (x1 == x3 && y1 == y3))
@@ -38,13 +37,21 @@ int main() {
         }
 
         // равнобедренный
-        bool isIsoscelesTriangle = (side1 == side2 || side2 == side3 || side3 == side1);
+        bool isIsoscelesTriangle = ((side1 == side2) || (side2 == side3) || (side3 == side1));
+
+        // вырожденный
+        bool isDegenerateTriangle = ((side1 + side2 == side3) || (side1 + side3 == side2) || (side2 + side3 == side1));
 
         // равносторонний
-        bool isEquilateralTriangle = (side1 == side2 && side2 == side3);
+        bool isEquilateralTriangle = ((side1 == side2) && (side2 == side3));
+
         if (isRightTriangle == 1)
         {
             cout << "Прямоугольный";
+            exit;
+        }else if (isDegenerateTriangle == 1)
+        {
+            cout << "Вырожденный";
             exit;
         }else if (isIsoscelesTriangle == 1)
         {
