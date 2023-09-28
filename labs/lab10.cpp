@@ -15,7 +15,7 @@ int main(){
         int x22 = x2 % 10;
         int x31 = x3 / 10;
         int x32 = x3 % 10;
-        if (x11 * x12 <= x21 * x22)
+        if ((x11 * x12 <= x12 * x21) && (x12 * x21 <= x21 * x22))
         {
             ans = 1000 * x11 + 100 * x12 + 10 * x21 + x22;
             cout << ans;
