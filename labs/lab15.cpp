@@ -12,7 +12,7 @@ void insert(int arr[], int n, int x)
     arr[i] = x;
 }
 
-// функция вывода элемента
+// функция вывода массива
 void printArray(int arr[], int n)
 {
     for (int i = 0; i < n; i++)
