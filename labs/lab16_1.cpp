@@ -41,7 +41,7 @@ double ArithmeticMean(double** matrix, const int m, const int n){
     return arithmetic_mean;
 }
 
-// функция для подсчета среднего арифметического модулей элементов матрицы
+// функция для подсчета среднего геометрического модулей элементов матрицы
 double GeometricMean(double** matrix, const int m, const int n) {
     double x = 1;
     for (int i = 0; i < m; i++) {
@@ -128,8 +128,3 @@ int main() {
     cout << "Статистический массив:" << endl; 
     stat(static_matrix);
 }
-
-// Результирующая матрица:
-// [[-1  3  0]
-//  [ 0  0  0]
-//  [-4  0  0]]
