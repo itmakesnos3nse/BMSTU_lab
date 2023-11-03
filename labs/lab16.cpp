@@ -1,3 +1,4 @@
+// решение с использованием векторов
 #include <iostream>
 #include <vector>
 #include <cmath>
