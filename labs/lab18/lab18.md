@@ -34,9 +34,8 @@ int CompareInt9to0 (void *first_pointer, void *second_pointer);
 сортировался по возрастанию, а при использовании второй - по
 убыванию. Отлаженный в третьем пункте алгоритм сортировки и
 поиска минимума тут менять запрещено!
-Объявите в основной программе массив из функций типа
+Объявите в основной программе массив из функций типа `CompareFunctionType`
 ```
-CompareFunctionType;
 const int N = 2;
 CompareFunctionType compareFunctionPointers[N];
 ```
