@@ -36,7 +36,7 @@ int CompareInt9to0 (void *first_pointer, void *second_pointer);
 поиска минимума тут менять запрещено!
 Объявите в основной программе массив из функций типа
 ```
-CompareFunctionType.
+CompareFunctionType;
 const int N = 2;
 CompareFunctionType compareFunctionPointers[N];
 ```
