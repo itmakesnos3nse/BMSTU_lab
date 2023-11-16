@@ -137,6 +137,9 @@ void SelectionSort_3(int *arr, int lenght, CompareFunctionType compare_function_
     }
 }
 
+// КОНЕЦ ЗАДАНИЯ 4
+
+// НАЧАЛО ЗАДАНИЯ 5
 
 
 
@@ -153,6 +156,7 @@ int main(){
     SelectionSort(arr, lenght);
     OutputArray(arr, lenght);
     cout << "\n\n";
+    delete[] arr; // очистка памяти после использования динамического массива
     // конец задания 1
 
     // начало задания 2
@@ -183,12 +187,13 @@ int main(){
     SelectionSort_2(arr2, lenght2, &Compare);
     OutputArray(arr2, lenght2);
     cout << "\n\n";
+    delete[] arr2;
+
     // конец задания 3
     
     // начало задания 4
     const int N = 2;
     CompareFunctionType compareFunctionPointers[N];
-    // Объявить 2 функции
     compareFunctionPointers[0] = &CompareInt0to9; // по возрастанию
     compareFunctionPointers[1] = &CompareInt9to0; // по убыванию
     int lenght3;
@@ -198,20 +203,23 @@ int main(){
     int *arr3 = new int[lenght3];
     cout << "введите элементы массива: ";
     InputArray(arr3, lenght3);
-    cout << "выберите вид сортировки: по возрастанию или по убыванию:\n";
+    cout << "выберите вид сортировки: по возрастанию(0to9) или по убыванию(9to0):\n";
     string ans;
     cin >> ans;
-    if(ans == "по возрастанию"){
+    if(ans == "0to9"){
         SelectionSort_3(arr3, lenght3, compareFunctionPointers[0]);
+        OutputArray(arr3, lenght3);
     }
-    else if(ans == "по убыванию"){
+    else if(ans == "9to0"){
         SelectionSort_3(arr3, lenght3, compareFunctionPointers[1]);
+        OutputArray(arr3, lenght3);
     }
     else{
         cout << "неверные входные данные\n";
     }
-    OutputArray(arr3, lenght3);
-    // конец задания 4 (доделать)
+    delete[] arr3;
+
+    // конец задания 4 
 
     // начало задания 5
 
