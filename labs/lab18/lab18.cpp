@@ -141,8 +141,40 @@ void SelectionSort_3(int *arr, int lenght, CompareFunctionType compare_function_
 
 // НАЧАЛО ЗАДАНИЯ 5
 
+// функция для ввода элементов типа char
+void InputArrayChar(char *arr, int length){
+    for (int i = 0; i < length; i++) {
+        cin >> arr[i];
+    }
+}
 
+// функця для вывода элементов массива типа char
+void OutputArrayChar(char *arr, int lenght){
+    for (int i = 0; i < lenght; i++){
+        cout << arr[i];
+    }
+}
 
+// функция для свапа элементов типа char
+void SwapChar(char *first_pointer, char *second_pointer){
+    char a = *second_pointer;
+    *second_pointer = *first_pointer;
+    *first_pointer = a;
+}
+
+// функция для сравнения элементов типа char которые являются цифрами
+int CompareChar0to9(void *first_pointer, void *second_pointer){
+    int *first_element_int_pointer = (int*)first_pointer;
+    int *second_element_int_pointer = (int*)second_pointer;
+    return *first_element_int_pointer - *second_element_int_pointer;
+}
+
+// функция для сравнения элементов типа char которые являются буквами
+int CompareCharAtoZ(void *first_pointer, void*second_pointer){
+    char *first_element_char_pointer = (char*)first_pointer;
+    char *second_element_char_pointer = (char*)second_pointer;
+    return *first_element_char_pointer - *second_element_char_pointer;
+}
 
 
 int main(){
