@@ -19,6 +19,6 @@
 массива. Предполагается, что матрица нулевых элементов не содержит.
 
 # Решение
-В файле [lab16.cpp](https://github.com/itmakesnos3nse/BMSTU_lab/blob/main/labs/lab16/lab16.cpp) представлено решение с использованием векторов как динамического массива.
-В файле [lab16_1.cpp](https://github.com/itmakesnos3nse/BMSTU_lab/blob/main/labs/lab16/lab16_1.cpp) вместо векторов как динамического массива использовался массив с указателями который создается как `double** matrix = new double*[m]`
+В файле [lab16_1.cpp](https://github.com/itmakesnos3nse/BMSTU_lab/blob/main/labs/lab16/lab16_1.cpp) представлено решение с использованием векторов как динамического массива.
+В файле [lab16.cpp](https://github.com/itmakesnos3nse/BMSTU_lab/blob/main/labs/lab16/lab16.cpp) вместо векторов как динамического массива использовался массив с указателями который создается как `double** matrix = new double*[m]`
 
