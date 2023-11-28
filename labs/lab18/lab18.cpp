@@ -151,7 +151,7 @@ void InputArrayChar(char *arr, int length){
 // функця для вывода элементов массива типа char
 void OutputArrayChar(char *arr, int lenght){
     for (int i = 0; i < lenght; i++){
-        cout << arr[i];
+        cout << arr[i] << " ";
     }
 }
 
@@ -176,6 +176,39 @@ int CompareCharAtoZ(void *first_pointer, void*second_pointer){
     return *first_element_char_pointer - *second_element_char_pointer;
 }
 
+int FindMinimumIndex_5(void *data_array, int length, int width, CompareFunctionType compare_function_pointer, int first_index, int last_index) {
+    char *bytevise_array = (char *)data_array;
+    int minimum_index = first_index;
+    int minimum_byte_number = minimum_index * width;
+    int current_byte_number = 0;
+    for (int element_number = first_index; element_number <= last_index; ++element_number) {
+        current_byte_number = element_number * width;
+        if ((*compare_function_pointer) ( &bytevise_array [current_byte_number],&bytevise_array [minimum_byte_number]) < 0 ) {
+             minimum_byte_number = current_byte_number;
+        }
+    }
+    minimum_index = minimum_byte_number / width;
+return minimum_index;
+}
+
+void Swap_5(void *first_pointer, void *second_pointer, int width) {
+    for (int byte_number = 0; byte_number < width; ++byte_number) {
+        SwapChar((char *)first_pointer + byte_number, (char *)second_pointer + byte_number);
+    }
+    return;
+}
+
+void SelectionSort_5(void *data_array, int length, int width, CompareFunctionType compare_function_pointer){
+    int min_i;
+    for(int i = 0; i < length; i++){
+        min_i = FindMinimumIndex_5(data_array, length, width, compare_function_pointer, i, length - 1);
+        if (min_i != i) {
+            Swap_5((char *)data_array + i * width, (char *)data_array + min_i * width, width);
+        }
+    }
+}
+
+// конец задания 5
 
 int main(){
     int lenght;
@@ -254,9 +287,28 @@ int main(){
     // конец задания 4 
 
     // начало задания 5
-
-
-
-
+    int lenght5;
+    cout << "Введите тип данных(char/int): ";
+    string typ;
+    cin >> typ;
+    if(typ == "int"){
+        cout << "Введите длину: ";
+        cin >> lenght5;
+        int *arr5 = new int[lenght5];
+        InputArray(arr5, lenght5);
+        SelectionSort_5(arr5, lenght5, sizeof(arr5[0]), CompareChar0to9);
+        OutputArray(arr5, lenght5); 
+        delete[] arr5;
+    } else if(typ == "char"){
+        cout << "Введите длину: ";
+        cin >> lenght5;
+        char *arr5 = new char[lenght5];
+        InputArrayChar(arr5, lenght5);
+        SelectionSort_5(arr5, lenght5, sizeof(arr5[0]), CompareCharAtoZ);
+        OutputArrayChar(arr5, lenght5);
+        delete[] arr5;
+    } else{
+        cout << "Некорректные данные.\n";
+    }
 
 }
